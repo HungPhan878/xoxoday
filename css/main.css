@@ -1554,7 +1554,8 @@ strong {
 }
 
 .reward {
-  background-color: blue;
+  padding: 83.2px 0 60px 0;
+  background-image: linear-gradient(170deg, #025cff 65%, white 65.1%);
 }
 .reward-info {
   display: flex;
@@ -1603,12 +1604,41 @@ strong {
 .reward-info__btn:last-child:hover {
   color: var(--primary-color);
 }
+.reward-info__btn:first-child > .reward-info__btn-icon {
+  background-image: url("/images/arrow-icon-right.svg");
+}
+.reward-info__btn:first-child:hover > .reward-info__btn-icon {
+  background-image: url("/images/arrow-icon-right-2.svg");
+}
+.reward-info__btn:last-child > .reward-info__btn-icon {
+  background-image: url("/images/arrow-icon-right-black.svg");
+}
+.reward-info__btn:last-child:hover > .reward-info__btn-icon {
+  background-image: url("/images/arrow-icon-right-black-2.svg");
+}
 .reward-info__btn-icon {
   width: 10px;
   height: 10px;
-  background-image: url("/images/arrow-icon-right.svg");
   background-repeat: no-repeat;
   margin-left: 10px;
+}
+.reward-row {
+  padding: 74px 0 60px 0;
+}
+.reward-img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.reward-brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+.reward-brand__img:last-child {
+  width: 117px;
+  height: 30px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */

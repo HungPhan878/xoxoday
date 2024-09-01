@@ -1,8 +1,6 @@
 .reward {
-  background-color: blue;
-
-  &-wrap {
-  }
+  padding: 83.2px 0 60px 0;
+  background-image: linear-gradient(170deg, #025cff 65%, white 65.1%);
 
   &-info {
     display: flex;
@@ -58,13 +56,50 @@
         color: var(--primary-color);
       }
     }
+
+    &:first-child > &-icon {
+      background-image: url('/images/arrow-icon-right.svg');
+    }
+
+    &:first-child:hover > &-icon {
+      background-image: url('/images/arrow-icon-right-2.svg');
+    }
+
+    &:last-child > &-icon {
+      background-image: url('/images/arrow-icon-right-black.svg');
+    }
+
+    &:last-child:hover > &-icon {
+      background-image: url('/images/arrow-icon-right-black-2.svg');
+    }
   }
 
   &-info__btn-icon {
     width: 10px;
     height: 10px;
-    background-image: url('/images/arrow-icon-right.svg');
     background-repeat: no-repeat;
     margin-left: 10px;
+  }
+
+  &-row {
+    padding: 74px 0 60px 0;
+  }
+
+  &-img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &-brands {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  &-brand__img:last-child {
+    width: 117px;
+    height: 30px;
+    object-fit: cover;
   }
 }
