@@ -72,7 +72,8 @@
 
 .header {
   position: sticky;
-  top: 42px;
+  position: -webkit-sticky; /* For Safari */
+  top: 0;
   background-color: #fff;
 
   &-bottom {
