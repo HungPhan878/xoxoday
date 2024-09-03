@@ -99,6 +99,12 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- script handle logic -->
+    <script src="./index.js"></script>
   </head>
   <body>
     <div class="gift-wrap">
@@ -115,7 +121,7 @@
       <img
         src="../images/close-icon.png"
         alt="icon-close"
-        class="gift-close__icon"
+        class="gift-close__icon close"
       />
     </div>
     <!-- header -->
@@ -1136,8 +1142,8 @@
             <div class="distribute-features">
               <div class="row">
                 <div class="col col-3">
-                  <ul class="distribute-list">
-                    <li class="distribute-item distribute-item--active">
+                  <ul class="distribute-list js-list">
+                    <li class="distribute-item active">
                       <div class="distribute-item__icon-inner">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -1546,6 +1552,175 @@
                   >Watch Video
                   <div class="explore-info__btn-icon"></div>
                 </a>
+              </div>
+            </div>
+
+            <div class="explore-list">
+              <div class="row gx-5">
+                <div class="col col-6">
+                  <figure class="explore-images">
+                    <img
+                      src="../images/explore/explore1.webp"
+                      alt="Gift Cards"
+                      class="explore-img"
+                    />
+                    <img
+                      src="../images/explore/explore2.webp"
+                      alt="Merchandise"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore3.webp"
+                      alt="Experiences"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore4.webp"
+                      alt="Prepaid Cards"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore5.webp"
+                      alt="Flight & Hotel Booking"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore6.webp"
+                      alt="Charity & Donations"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore7.webp"
+                      alt="Swag"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore8.webp"
+                      alt="Top-ups & Subscriptions"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore9.webp"
+                      alt="Games"
+                      class="explore-img d-none"
+                    />
+                    <img
+                      src="../images/explore/explore10.webp"
+                      alt="Miles"
+                      class="explore-img d-none"
+                    />
+                  </figure>
+                </div>
+
+                <div class="col-6">
+                  <div class="explore-list__features">
+                    <div class="row row-cols-2 gx-3 gy-3">
+                      <div class="explore-item explore-item--active">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Gift Cards</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          30k+ branded gift cards
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Merchandise</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          300k+ fashion, electronics, etc.
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Experiences</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">100k+ experiences</p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Prepaid Cards</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          Instant and hassle free payments
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">
+                            Flight & Hotel Booking
+                          </h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          900+ international flights
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">
+                            Charity & Donations
+                          </h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          5000+ charity organizations
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Swag</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          Branded goodies and products
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">
+                            Top-ups & Subscriptions
+                          </h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          Utility, e-subscription & more
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Games</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          Auctions, sweepstakes & more
+                        </p>
+                      </div>
+
+                      <div class="explore-item">
+                        <div class="explore-item__row">
+                          <h3 class="explore-item__title">Miles</h3>
+                          <div class="explore-item__icon"></div>
+                        </div>
+                        <p class="explore-item__desc">
+                          Miles exchange for flights and more
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
