@@ -1555,6 +1555,13 @@ strong {
   color: var(--primary-color);
 }
 
+.font-size-16px, .solution-info__desc, .tools-info__desc, .features-item__desc {
+  color: #394960;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
 .reward {
   padding: 83.2px 0 60px 0;
   background-image: linear-gradient(170deg, #025cff 65%, white 65.1%);
@@ -1906,6 +1913,207 @@ strong {
   font-weight: 400;
   font-size: 1.4rem;
   color: rgb(57, 73, 96);
+}
+
+.features {
+  background-color: #f6f7f9;
+  padding: 80px 0;
+}
+.features-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.features-info__heading {
+  max-width: 780px;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 4.4rem;
+}
+.features-info__desc {
+  max-width: 746px;
+  color: #394960;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.features-list {
+  margin-top: 40px;
+}
+.features-item {
+  padding: 20px;
+  border: 0.5px solid #cfd7e2;
+  border-radius: 18px;
+  height: 262px;
+  background-color: #fff;
+  text-align: left;
+}
+.features-item__title {
+  margin-top: 20px;
+  color: #041a2f;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 30px;
+}
+.features-item__desc {
+  margin: 20px 0;
+  line-height: 1.8;
+}
+.features-cta {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.features-cta__btn:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+.features-cta__btn:hover .features-cta__btn-icon {
+  background-image: url("../../images/arrow-icon-right-2.svg");
+}
+.features-cta__btn-icon {
+  width: 10px;
+  height: 10px;
+  background-image: url("../../images/arrow-icon-right-primary.svg");
+  background-repeat: no-repeat;
+  margin-right: auto;
+}
+
+.tools {
+  background-color: #e6eeff;
+  padding: 80px 0;
+}
+.tools-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.tools-info__heading {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 4.4rem;
+}
+.tools-info__desc {
+  max-width: 672px;
+}
+.tools-cta {
+  display: flex;
+  justify-content: center;
+}
+.tools-cta__btn:hover .tools-cta__btn-icon {
+  background-image: url("../../images/arrow-icon-right-2.svg");
+}
+.tools-cta__btn-icon {
+  width: 10px;
+  height: 10px;
+  background-image: url("../../images/arrow-icon-right.svg");
+  background-repeat: no-repeat;
+  margin-right: auto;
+}
+.tools-image {
+  margin-top: 60px;
+}
+.tools-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.solution {
+  padding: 80px 0;
+  background-color: #fff;
+}
+.solution-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  text-align: center;
+}
+.solution-info__heading {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.solution-info__desc {
+  max-width: 750px;
+}
+.solution-list__wrap {
+  margin-top: 40px;
+}
+.solution-images {
+  position: relative;
+  width: 100%;
+}
+.solution-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: contain;
+}
+.solution-item {
+  padding: 20px 0;
+}
+.solution-item__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.solution-item__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 24px;
+}
+.solution-item__icon-wrap {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.solution-item__info {
+  padding: 16px 0 0 0;
+}
+.solution-item__link-text {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--primary-color);
+}
+.solution-item__link-icon {
+  width: 14px;
+  height: 14px;
+  background-image: url("../../images/arrow-icon-right-primary.svg");
+  background-repeat: no-repeat;
+  margin-left: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.btn-primary {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.btn-text-primary {
+  color: var(--primary-color);
+  border-color: #e6eeff;
+  background-color: #e6eeff;
+}
+.btn-black {
+  color: #fff;
+  background-color: #041a2f;
+  border-color: #041a2f;
 }
 
 /*# sourceMappingURL=main.css.map */
