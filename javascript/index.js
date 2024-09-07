@@ -26,6 +26,13 @@ function main() {
         $(this).addClass('active');
       }
     });
+    // trượt đến đầu trang
+    document
+      .querySelector('.footer-icon__back-img')
+      .addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
   });
 }
 

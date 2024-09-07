@@ -4,6 +4,61 @@
   background-color: #021b33;
   color: #afbccf;
 
+  &-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1200px;
+    height: 306px;
+    padding: 60px;
+    border-radius: 20px;
+
+    background-color: #ffd166;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &-top__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+
+    color: var(--text-color);
+  }
+
+  &-top__info__heading {
+    font-size: 3.4rem;
+    line-height: 44px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  &-top__info__desc {
+    width: 700px;
+    color: #021b33;
+    line-height: 24px;
+  }
+
+  &-top__cta {
+    margin-top: 10px;
+  }
+
+  &-top__cta-btn {
+    &:hover &-icon {
+      background-image: url('../../images/arrow-icon-right-2.svg');
+    }
+  }
+
+  &-top__cta-btn-icon {
+    width: 10px;
+    height: 10px;
+    background-image: url('../../images/arrow-icon-right.svg');
+    background-repeat: no-repeat;
+    margin-right: auto;
+  }
+
   &-bottom {
     padding-top: 80px;
   }
@@ -56,32 +111,84 @@
   }
 
   &-heading {
+    margin-bottom: 15px;
+
+    color: #ffba1c;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   &-list {
   }
 
   &-item {
+    margin-top: 12px;
   }
 
   &-link {
+    color: #afbccf;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.4;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &__inner {
+      border: 1px solid #ffe099;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin-left: 5px;
+
+      color: #ddf4fa;
+      background-color: #ffba1c33;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
   }
 
   &-icon__back {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    height: 100%;
   }
 
-  &-icon__back-img {
+  &-icon__back-img:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7493%)
+      hue-rotate(199deg) brightness(94%) contrast(108%);
+    cursor: pointer;
   }
 
   &-policy__wrapper {
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+
+    & p {
+      cursor: text;
+    }
   }
 
   &-policy__list {
-  }
-
-  &-policy__item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
   }
 
   &-policy__link {
+    color: #afbccf;
+    font-size: 1.4rem;
+
+    &:hover {
+      color: #fff;
+    }
   }
 }
