@@ -856,7 +856,7 @@
   &-row {
     margin-top: 70px;
     display: flex;
-    overflow: hidden;
+    transform: translateX(var(--width));
   }
 
   &-col {
@@ -865,6 +865,8 @@
   }
 
   &-quote {
+    display: flex;
+    align-items: center;
     border: 1px solid #cfd7e2;
     border-radius: 18px;
     max-width: 1080px;
@@ -873,9 +875,112 @@
     margin-right: auto;
 
     box-shadow: 0 10px 20px #0000001a;
+    overflow: hidden;
   }
 
   &-img {
+    flex-shrink: 0;
+    position: relative;
+    width: 378px;
+    height: 256px;
+    flex-shrink: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 2;
+    }
+  }
+  // feedback col 1
+  &-col:first-child &-img {
+    background-image: url(../../images/feedback/image.avif);
+  }
+
+  &-col:first-child &-img::before {
+    background: linear-gradient(rgba(3, 91, 255, 0.7), rgba(3, 91, 255, 0.7));
+  }
+
+  &-col:first-child &-img::after {
+    width: 171px;
+    height: 50px;
+    background-image: url(../../images/feedback/icon1.svg);
+  }
+  //feedback col 2
+  &-col:nth-child(2) &-img {
+    background-image: url(../../images/feedback/image2.avif);
+  }
+
+  &-col:nth-child(2) &-img::before {
+    background: linear-gradient(#273241b0, #273241b0);
+  }
+
+  &-col:nth-child(2) &-img::after {
+    width: 179px;
+    height: 35px;
+    background-image: url(../../images/feedback/icon2.svg);
+  }
+
+  //feedback col 3
+  &-col:nth-child(3) &-img {
+    background-image: url(../../images/feedback/image3.avif);
+  }
+
+  &-col:nth-child(3) &-img::before {
+    background: linear-gradient(#13b5e9c7, #13b5e9c7);
+  }
+
+  &-col:nth-child(3) &-img::after {
+    width: 102px;
+    height: 27px;
+    background-image: url(../../images/feedback/icon3.svg);
+  }
+
+  //feedback col 4
+  &-col:nth-child(4) &-img {
+    background-image: url(../../images/feedback/image4.avif);
+  }
+
+  &-col:nth-child(4) &-img::before {
+    background: linear-gradient(#ce3636ab, #ce3636ab);
+  }
+
+  &-col:nth-child(4) &-img::after {
+    width: 70px;
+    height: 45px;
+    background-image: url(../../images/feedback/icon4.svg);
+  }
+
+  //feedback col 5
+  &-col:nth-child(5) &-img {
+    background-image: url(../../images/feedback/image5.avif);
+  }
+
+  &-col:nth-child(5) &-img::before {
+    background: linear-gradient(#0070adb0, #0070adb0);
+  }
+
+  &-col:nth-child(5) &-img::after {
+    width: 172px;
+    height: 38px;
+    background-image: url(../../images/feedback/icon5.svg);
   }
 
   &-info {
@@ -904,9 +1009,59 @@
   }
 
   &-icons {
+    width: 1080px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    cursor: pointer;
   }
 
   &-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(76%) saturate(576%)
+      hue-rotate(189deg) brightness(94%) contrast(100%);
+    opacity: 0.4;
+    &.active {
+      opacity: 1;
+      filter: none;
+    }
+
+    &:first-child {
+      margin-left: 20xp;
+      width: 171px;
+      height: 50px;
+      background-image: url(../../images/feedback/brand1.svg);
+    }
+
+    &:nth-child(2) {
+      width: 179px;
+      height: 35px;
+      background-image: url(../../images/feedback/brand2.svg);
+    }
+
+    &:nth-child(3) {
+      width: 102px;
+      height: 50px;
+      background-image: url(../../images/feedback/brand3.svg);
+    }
+
+    &:nth-child(4) {
+      width: 70px;
+      height: 45px;
+      background-image: url(../../images/feedback/brand4.svg);
+    }
+    &:last-child {
+      margin-right: 20px;
+      width: 172px;
+      height: 50px;
+      background-image: url(../../images/feedback/brand5.svg);
+    }
   }
 }
 

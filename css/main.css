@@ -2222,13 +2222,15 @@ strong {
 .feedback-row {
   margin-top: 70px;
   display: flex;
-  overflow: hidden;
+  transform: translateX(var(--width));
 }
 .feedback-col {
   flex-shrink: 0;
   width: 100%;
 }
 .feedback-quote {
+  display: flex;
+  align-items: center;
   border: 1px solid #cfd7e2;
   border-radius: 18px;
   max-width: 1080px;
@@ -2236,6 +2238,92 @@ strong {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1019607843);
+  overflow: hidden;
+}
+.feedback-img {
+  flex-shrink: 0;
+  position: relative;
+  width: 378px;
+  height: 256px;
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feedback-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.feedback-img::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+}
+.feedback-col:first-child .feedback-img {
+  background-image: url(../../images/feedback/image.avif);
+}
+.feedback-col:first-child .feedback-img::before {
+  background: linear-gradient(rgba(3, 91, 255, 0.7), rgba(3, 91, 255, 0.7));
+}
+.feedback-col:first-child .feedback-img::after {
+  width: 171px;
+  height: 50px;
+  background-image: url(../../images/feedback/icon1.svg);
+}
+.feedback-col:nth-child(2) .feedback-img {
+  background-image: url(../../images/feedback/image2.avif);
+}
+.feedback-col:nth-child(2) .feedback-img::before {
+  background: linear-gradient(rgba(39, 50, 65, 0.6901960784), rgba(39, 50, 65, 0.6901960784));
+}
+.feedback-col:nth-child(2) .feedback-img::after {
+  width: 179px;
+  height: 35px;
+  background-image: url(../../images/feedback/icon2.svg);
+}
+.feedback-col:nth-child(3) .feedback-img {
+  background-image: url(../../images/feedback/image3.avif);
+}
+.feedback-col:nth-child(3) .feedback-img::before {
+  background: linear-gradient(rgba(19, 181, 233, 0.7803921569), rgba(19, 181, 233, 0.7803921569));
+}
+.feedback-col:nth-child(3) .feedback-img::after {
+  width: 102px;
+  height: 27px;
+  background-image: url(../../images/feedback/icon3.svg);
+}
+.feedback-col:nth-child(4) .feedback-img {
+  background-image: url(../../images/feedback/image4.avif);
+}
+.feedback-col:nth-child(4) .feedback-img::before {
+  background: linear-gradient(rgba(206, 54, 54, 0.6705882353), rgba(206, 54, 54, 0.6705882353));
+}
+.feedback-col:nth-child(4) .feedback-img::after {
+  width: 70px;
+  height: 45px;
+  background-image: url(../../images/feedback/icon4.svg);
+}
+.feedback-col:nth-child(5) .feedback-img {
+  background-image: url(../../images/feedback/image5.avif);
+}
+.feedback-col:nth-child(5) .feedback-img::before {
+  background: linear-gradient(rgba(0, 112, 173, 0.6901960784), rgba(0, 112, 173, 0.6901960784));
+}
+.feedback-col:nth-child(5) .feedback-img::after {
+  width: 172px;
+  height: 38px;
+  background-image: url(../../images/feedback/icon5.svg);
 }
 .feedback-info {
   padding: 48px;
@@ -2257,6 +2345,55 @@ strong {
   color: #041a2f;
   font-weight: 700;
 }
+.feedback-icons {
+  width: 1080px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+}
+.feedback-icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(76%) saturate(576%) hue-rotate(189deg) brightness(94%) contrast(100%);
+  opacity: 0.4;
+}
+.feedback-icon.active {
+  opacity: 1;
+  filter: none;
+}
+.feedback-icon:first-child {
+  margin-left: 20xp;
+  width: 171px;
+  height: 50px;
+  background-image: url(../../images/feedback/brand1.svg);
+}
+.feedback-icon:nth-child(2) {
+  width: 179px;
+  height: 35px;
+  background-image: url(../../images/feedback/brand2.svg);
+}
+.feedback-icon:nth-child(3) {
+  width: 102px;
+  height: 50px;
+  background-image: url(../../images/feedback/brand3.svg);
+}
+.feedback-icon:nth-child(4) {
+  width: 70px;
+  height: 45px;
+  background-image: url(../../images/feedback/brand4.svg);
+}
+.feedback-icon:last-child {
+  margin-right: 20px;
+  width: 172px;
+  height: 50px;
+  background-image: url(../../images/feedback/brand5.svg);
+}
+
 .secure {
   padding: 233px 0;
   background-color: #f6f7f9;
