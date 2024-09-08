@@ -857,6 +857,7 @@
     margin-top: 70px;
     display: flex;
     transform: translateX(var(--width));
+    transition: transform 0.5s ease;
   }
 
   &-col {
@@ -1067,7 +1068,7 @@
 
 // secure
 .secure {
-  padding: 233px 0;
+  padding: 153px 0 233px;
   background-color: #f6f7f9;
 
   &-container {

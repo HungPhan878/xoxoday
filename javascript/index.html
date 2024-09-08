@@ -105,6 +105,12 @@
 
     <!-- script handle logic -->
     <script src="./index.js"></script>
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
     <div class="gift-wrap">
@@ -1880,7 +1886,13 @@
       </section>
 
       <!-- solution -->
-      <section class="solution">
+      <section
+        class="solution"
+        data-aos="fade-up"
+        data-aos-duration="1800"
+        data-aos-anchor-placement="center-center"
+        data-aos-once="true"
+      >
         <div class="container">
           <div class="solution-wrap">
             <div class="solution-info">
@@ -2728,7 +2740,13 @@
       </section>
 
       <!-- secure -->
-      <section class="secure">
+      <section
+        class="secure"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-anchor-placement="top-center"
+        data-aos-once="true"
+      >
         <div class="container secure-container">
           <div class="secure-wrap">
             <div class="row row-cols-2 gx-1">
@@ -2995,5 +3013,9 @@
         </div>
       </footer>
     </main>
+    <!-- script -->
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

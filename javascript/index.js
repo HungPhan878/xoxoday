@@ -25,6 +25,14 @@ function main() {
         }
         $(this).addClass('active');
       }
+      // slide feedback
+      const feedbackRow = parentUl.prev('.feedback-row');
+      if (feedbackRow.length) {
+        let index = $(this).index();
+        let newWidth = index * -100;
+        feedbackRow.css('--width', newWidth + '%');
+      }
+
     });
     // trượt đến đầu trang
     document

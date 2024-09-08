@@ -2223,6 +2223,7 @@ strong {
   margin-top: 70px;
   display: flex;
   transform: translateX(var(--width));
+  transition: transform 0.5s ease;
 }
 .feedback-col {
   flex-shrink: 0;
@@ -2395,7 +2396,7 @@ strong {
 }
 
 .secure {
-  padding: 233px 0;
+  padding: 153px 0 233px;
   background-color: #f6f7f9;
 }
 .secure-container {
