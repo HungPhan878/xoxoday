@@ -23,6 +23,53 @@ function main() {
       });
     }
 
+    // common function
+    function toggleActiveClass(item, activeClass, tagToggleSelector) {
+      let itemIndex = item.index();
+      let tagToggle = $(tagToggleSelector);
+      if (tagToggle) {
+        tagToggle.removeClass(activeClass);
+        let tagToggleTarget = tagToggle.eq(itemIndex);
+        if (tagToggleTarget) {
+          tagToggleTarget.addClass(activeClass);
+        }
+      }
+    }
+
+    // function auto active
+    function autoActive(
+      selector,
+      itemSelector,
+      activeClass = 'active',
+      index,
+      timeout,
+      callback = null
+    ) {
+      console.log('auto active');
+      let currentIndex = index;
+      let items = $(selector).find(itemSelector);
+
+      function autoChangeActive() {
+        items.removeClass(activeClass);
+        items.eq(currentIndex).addClass(activeClass);
+
+        if (callback) {
+          callback(items.eq(currentIndex), activeClass);
+        }
+        currentIndex = (currentIndex + 1) % items.length;
+      }
+      let autoChangeInterval = setInterval(autoChangeActive, timeout);
+
+      return {
+        stop: function () {
+          clearInterval(autoChangeInterval);
+        },
+        getCurrentIndex: function () {
+          return currentIndex;
+        },
+      };
+    }
+
     // Nếu nhấn vào element có class .close sẽ ẩn phần tử cha
     $('.close').click(function () {
       $(this).parent().hide();
@@ -72,49 +119,114 @@ function main() {
       }
     );
 
-    // // kiểm tra xem trong vào element có class active hay chưa
-    // $('li, div').click(function (event) {
-    //   // Ngăn chặn sự kiện không ảnh hưởng đến thẻ cha
-    //   event.stopPropagation();
+    //handle Toggle solution
+    let handelAutoChange = autoActive(
+      '.solution-list',
+      '.solution-item',
+      'active',
+      0,
+      3000,
+      function (item, activeClass) {
+        toggleActiveClass(item, activeClass, '.solution-img');
+      }
+    );
 
-    //   let parentUl = $(this).closest('ul');
-    //   let parentDiv = $(this).closest('div');
-    //   // Kiểm tra và lấy class của phần tử <ul>
-    //   let ulClass = parentUl.hasClass('js-list');
-    //   let divClass = parentDiv.hasClass('js-list');
+    handleActiveToggle(
+      '.solution-list',
+      '.solution-item',
+      'active',
+      function (item, activeClass) {
+        let itemIndex = item.index();
+        let tagToggle = $('.solution-img');
 
-    //   if (ulClass || divClass) {
-    //     let activeLi = parentUl.find('li.active');
-    //     let activeDiv = parentDiv.find('div.active');
-    //     if (activeLi.length) {
-    //       activeLi.removeClass('active');
-    //     } else if (activeDiv.length) {
-    //       activeDiv.removeClass('active');
-    //     }
-    //     $(this).addClass('active');
-    //   }
-    //   // slide feedback
-    //   const feedbackRow = parentUl.prev('.feedback-row');
-    //   if (feedbackRow.length) {
-    //     let index = $(this).index();
-    //     let newWidth = index * -100;
-    //     feedbackRow.css('--width', newWidth + '%');
-    //   }
+        handelAutoChange.stop();
 
-    //   // distribute
-    //   const distributeId = $(this).closest('ul').attr('id');
-    //   if (distributeId === 'distribute') {
-    //     let liIndex = $(this).index();
-    //     let article = $('.distribute-content__wrap');
-    //     if (article) {
-    //       article.removeClass('active');
-    //       let targetArticle = article.eq(liIndex);
-    //       if (targetArticle) {
-    //         targetArticle.addClass('active');
-    //       }
-    //     }
-    //   }
-    // });
+        setTimeout(function () {
+          // Phải gán lại như thế này không sẽ tạo ra nhiều setInterval nha.
+          handelAutoChange = autoActive(
+            '.solution-list',
+            '.solution-item',
+            'active',
+            itemIndex,
+            3000,
+            function (item, activeClass) {
+              toggleActiveClass(item, activeClass, tagToggle);
+            }
+          );
+        }, 0);
+        if (tagToggle) {
+          toggleActiveClass(item, activeClass, '.solution-img');
+          // phần animate thì chỉ là ui thôi set time out = time ỉnterval là được
+        }
+        // if (tagToggle) {
+        //   tagToggle.removeClass(activeClass);
+        //   let tagToggleTarget = tagToggle.eq(itemIndex);
+        //   let tagWidthChange = $('.solution-item__separate');
+        //   let animatedWidthChange;
+        //   console.log(itemIndex);
+
+        // if (tagWidthChange.length > 0) {
+        //   let tagWidthChangeTarget = tagWidthChange.eq(itemIndex);
+        //   if (tagWidthChangeTarget) {
+        //     console.log('Starting animation...');
+        //     // tagWidthChangeTarget.animate({ width: '100%' }, 10000);
+        //     function startAnimation() {
+        //       animatedWidthChange = tagWidthChangeTarget.animate(
+        //         { width: '100%' },
+        //         10000
+        //       );
+        //     }
+        //     startAnimation();
+
+        //     tagWidthChangeTarget.hover(
+        //       function () {
+        //         animatedWidthChange.stop();
+        //       },
+        //       function () {
+        //         startAnimation();
+        //       }
+        //     );
+
+        //     startAnimation();
+        //   }
+        // }
+      }
+    );
+
+    //handle Toggle possibility
+    handleActiveToggle(
+      '.possibilities-content__top',
+      '.possibilities-tab',
+      'active',
+      function (item, activeClass) {
+        let itemIndex = item.index();
+        let tagToggle = $('.possibilities-item');
+        if (tagToggle) {
+          tagToggle.removeClass(activeClass);
+          let tagToggleTarget = tagToggle.eq(itemIndex);
+          if (tagToggleTarget) {
+            tagToggleTarget.addClass(activeClass);
+          }
+        }
+      }
+    );
+
+    //handle Toggle feedback
+    handleActiveToggle(
+      '.feedback-icons',
+      '.feedback-icon',
+      'active',
+      function (item) {
+        //slide feedback
+        const feedbackCol = $('.feedback-col');
+        if (feedbackCol.length) {
+          let feedbackParent = feedbackCol.closest('.feedback-row');
+          let index = item.index();
+          let newWidth = index * -100;
+          feedbackParent.css('--width', newWidth + '%');
+        }
+      }
+    );
   });
 }
 

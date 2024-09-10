@@ -47,14 +47,14 @@
 
   &-top__cta-btn {
     &:hover &-icon {
-      background-image: url('../../images/arrow-icon-right-2.svg');
+      background-image: url('../images/arrow-icon-right-2.svg');
     }
   }
 
   &-top__cta-btn-icon {
     width: 10px;
     height: 10px;
-    background-image: url('../../images/arrow-icon-right.svg');
+    background-image: url('../images/arrow-icon-right.svg');
     background-repeat: no-repeat;
     margin-right: auto;
   }
