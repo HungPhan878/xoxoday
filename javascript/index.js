@@ -17,6 +17,15 @@ function main() {
           $(this).addClass(activeClass);
         }
 
+        // change width of border
+        if (itemSelector === '.solution-item') {
+          const separates = $('.solution-item__separate');
+          if (separates.length > 0) {
+            const separate = separates.eq($(this).index());
+            separate.css('width', '0%');
+          }
+        }
+
         if (callback) {
           callback($(this), activeClass);
         }
@@ -48,17 +57,63 @@ function main() {
       console.log('auto active');
       let currentIndex = index;
       let items = $(selector).find(itemSelector);
+      // let startTime;
+      // let remainingTime = timeout;
+      let autoChangeInterval;
 
       function autoChangeActive() {
+        console.log('auto change active');
         items.removeClass(activeClass);
         items.eq(currentIndex).addClass(activeClass);
 
         if (callback) {
           callback(items.eq(currentIndex), activeClass);
         }
+
+        // change width of border
+        if (itemSelector === '.solution-item') {
+          const separates = $('.solution-item__separate');
+          if (separates.length > 0) {
+            const separate = separates.eq(currentIndex);
+            separate.css('width', '0%');
+            // startTime = Date.now(); // Bắt đầu đếm thời gian
+            separate.animate({ width: '100%' }, timeout);
+          }
+        }
+
+        // set currentIndex
         currentIndex = (currentIndex + 1) % items.length;
+        // remainingTime = timeout; // Reset lại thời gian cho lần tiếp theo
       }
-      let autoChangeInterval = setInterval(autoChangeActive, timeout);
+      // call f autoChangeActive immediately
+      autoChangeActive();
+
+      function startAutoChangeInterval(time) {
+        autoChangeInterval = setInterval(autoChangeActive, time);
+      }
+
+      startAutoChangeInterval(timeout);
+
+      // handle hover to pause and resume autoChangeActive
+      // items.on('mouseenter', function () {
+      //   clearInterval(autoChangeInterval);
+      //   const separate = $(this).find('.solution-item__separate');
+      //   if (separate.length > 0) {
+      //     let elapsedTime = Date.now() - startTime; // Tính thời gian đã chạy
+      //     remainingTime -= elapsedTime; // Dừng animate tại thời điểm hiện tại
+      //     separate.stop(true);
+      //   }
+      // });
+
+      // items.on('mouseleave', function () {
+      //   const separate = $(this).find('.solution-item__separate');
+      //   if (separate.length > 0 && remainingTime > 0) {
+      //     startTime = Date.now(); // Reset thời gian bắt đầu
+      //     separate.animate({ width: '100%' }, remainingTime, 'linear'); // Tiếp tục animate với thời gian còn lại
+      //   }
+      //   // Tiếp tục autoChange sau khi hết hover
+      //   startAutoChangeInterval(remainingTime);
+      // });
 
       return {
         stop: function () {
@@ -125,7 +180,7 @@ function main() {
       '.solution-item',
       'active',
       0,
-      3000,
+      10000,
       function (item, activeClass) {
         toggleActiveClass(item, activeClass, '.solution-img');
       }
@@ -148,7 +203,7 @@ function main() {
             '.solution-item',
             'active',
             itemIndex,
-            3000,
+            10000,
             function (item, activeClass) {
               toggleActiveClass(item, activeClass, tagToggle);
             }
@@ -156,40 +211,7 @@ function main() {
         }, 0);
         if (tagToggle) {
           toggleActiveClass(item, activeClass, '.solution-img');
-          // phần animate thì chỉ là ui thôi set time out = time ỉnterval là được
         }
-        // if (tagToggle) {
-        //   tagToggle.removeClass(activeClass);
-        //   let tagToggleTarget = tagToggle.eq(itemIndex);
-        //   let tagWidthChange = $('.solution-item__separate');
-        //   let animatedWidthChange;
-        //   console.log(itemIndex);
-
-        // if (tagWidthChange.length > 0) {
-        //   let tagWidthChangeTarget = tagWidthChange.eq(itemIndex);
-        //   if (tagWidthChangeTarget) {
-        //     console.log('Starting animation...');
-        //     // tagWidthChangeTarget.animate({ width: '100%' }, 10000);
-        //     function startAnimation() {
-        //       animatedWidthChange = tagWidthChangeTarget.animate(
-        //         { width: '100%' },
-        //         10000
-        //       );
-        //     }
-        //     startAnimation();
-
-        //     tagWidthChangeTarget.hover(
-        //       function () {
-        //         animatedWidthChange.stop();
-        //       },
-        //       function () {
-        //         startAnimation();
-        //       }
-        //     );
-
-        //     startAnimation();
-        //   }
-        // }
       }
     );
 

@@ -132,8 +132,27 @@
     </div>
     <!-- header -->
     <header class="header">
+      <!-- mobile -->
+      <div class="header-mobile d-none d-lg-block">
+        <div class="header-mobile__wrap">
+          <a href="/javascript/index.html" class="header-mobile__logo-link">
+            <img
+              src="https://cdn.prod.website-files.com/60080cdf80021f5e4cc61c9b/6567b9aec05716cbf852029d_XOXODAY%20LOGO%20-%20MINI.svg"
+              alt="xoxoday"
+              class="header-mobile__logo"
+            />
+          </a>
+          <div class="header-mobile__menu">
+            <img
+              src="../images/mobile/menu.svg"
+              alt="icon"
+              class="header-mobile__menu-icon"
+            />
+          </div>
+        </div>
+      </div>
       <div class="container">
-        <div class="header-bottom">
+        <div class="header-bottom d-lg-none">
           <a href="/javascript/index.html" class="header-logo__link">
             <img
               src="https://cdn.prod.website-files.com/60080cdf80021f5e4cc61c9b/6567b9aec05716cbf852029d_XOXODAY%20LOGO%20-%20MINI.svg"
@@ -1147,8 +1166,8 @@
               Distribute rewards and incentives the way you want
             </h2>
             <div class="distribute-features">
-              <div class="row">
-                <div class="col col-3">
+              <div class="row gy-lg-3">
+                <div class="col col-3 col-lg-12">
                   <ul class="distribute-list js-toggle-list">
                     <li class="distribute-item active">
                       <div class="distribute-item__icon-inner">
@@ -1266,11 +1285,13 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col col-9">
+                <div class="col col-9 col-lg-12">
                   <div class="distribute-blogs">
                     <!-- distribute article 1 -->
                     <article class="distribute-content__wrap">
-                      <div class="distribute-content__row row row-cols-2">
+                      <div
+                        class="distribute-content__row row row-cols-2 distribute-row--lg"
+                      >
                         <div class="col">
                           <div class="distribute-content">
                             <h3 class="distribute-content__title">
@@ -1318,7 +1339,7 @@
                     </article>
                     <!-- distribute article 2 -->
                     <article class="distribute-content__wrap">
-                      <div class="row row-cols-2">
+                      <div class="row row-cols-2 distribute-row--lg">
                         <div class="col">
                           <div class="distribute-content">
                             <h3 class="distribute-content__title">
@@ -1366,7 +1387,7 @@
                     </article>
                     <!-- distribute article 3 -->
                     <article class="distribute-content__wrap">
-                      <div class="row row-cols-2">
+                      <div class="row row-cols-2 distribute-row--lg">
                         <div class="col">
                           <div class="distribute-content">
                             <h3 class="distribute-content__title">
@@ -1414,7 +1435,7 @@
                     </article>
                     <!-- distribute article 4 -->
                     <article class="distribute-content__wrap">
-                      <div class="row row-cols-2">
+                      <div class="row row-cols-2 distribute-row--lg">
                         <div class="col">
                           <div class="distribute-content">
                             <h3 class="distribute-content__title">
@@ -1461,7 +1482,7 @@
                     </article>
                     <!-- distribute article 5 -->
                     <article class="distribute-content__wrap">
-                      <div class="row row-cols-2">
+                      <div class="row row-cols-2 distribute-row--lg">
                         <div class="col">
                           <div class="distribute-content">
                             <h3 class="distribute-content__title">
@@ -1510,7 +1531,7 @@
                     </article>
                     <!-- distribute article 6 -->
                     <article class="distribute-content__wrap active">
-                      <div class="row row-cols-2">
+                      <div class="row row-cols-2 distribute-row--lg">
                         <div class="col">
                           <div class="distribute-content">
                             <h3 class="distribute-content__title">
@@ -2048,6 +2069,7 @@
                           >
                           <div class="solution-item__link-icon"></div>
                         </a>
+                        <div class="solution-item__separate"></div>
                       </div>
                     </li>
 
@@ -2078,6 +2100,7 @@
                           >
                           <div class="solution-item__link-icon"></div>
                         </a>
+                        <div class="solution-item__separate"></div>
                       </div>
                     </li>
                   </ul>
@@ -2177,19 +2200,21 @@
                         <div class="possibilities-item__link-icon"></div>
                       </a>
                     </div>
-                    <div class="possibilities-item__image">
-                      <img
-                        src="../images/possibilities/image1.png"
-                        alt="Consumer Promotions"
-                        class="possibilities-item__img"
-                      />
+                    <div class="col">
+                      <div class="possibilities-item__image">
+                        <img
+                          src="../images/possibilities/image1.png"
+                          alt="Consumer Promotions"
+                          class="possibilities-item__img"
+                        />
+                      </div>
                     </div>
                   </div>
                 </article>
 
                 <!-- possibilities item 2 -->
                 <article class="possibilities-item">
-                  <div class="row row-cols-2">
+                  <div class="row row-cols-2 gx-4">
                     <div class="possibilities-item__info">
                       <h3 class="possibilities-item__title">Payouts</h3>
                       <p class="possibilities-item__desc">
@@ -2199,7 +2224,7 @@
                         delivery and redemption status in real-time
                       </p>
                       <div class="possibilities-item__list">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-2 g-4">
                           <div class="col">
                             <h4 class="possibilities-item__heading">
                               Flexible Denominations
@@ -2260,7 +2285,7 @@
 
                 <!-- possibilities item 3 -->
                 <article class="possibilities-item">
-                  <div class="row row-cols-2">
+                  <div class="row row-cols-2 gx-4">
                     <div class="possibilities-item__info">
                       <h3 class="possibilities-item__title">Surveys</h3>
                       <p class="possibilities-item__desc">
@@ -2270,7 +2295,7 @@
                         ensuring higher engagement and meaningful insights.
                       </p>
                       <div class="possibilities-item__list">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-2 g-4">
                           <div class="col">
                             <h4 class="possibilities-item__heading">
                               Seamless Integration
@@ -2333,7 +2358,7 @@
 
                 <!-- possibilities item 4 -->
                 <article class="possibilities-item">
-                  <div class="row row-cols-2">
+                  <div class="row row-cols-2 gx-4">
                     <div class="possibilities-item__info">
                       <h3 class="possibilities-item__title">
                         Channel Incentives
@@ -2348,7 +2373,7 @@
                         sales teams.
                       </p>
                       <div class="possibilities-item__list">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-2 g-4">
                           <div class="col">
                             <h4 class="possibilities-item__heading">
                               Pre-built Integrations
@@ -2411,7 +2436,7 @@
 
                 <!-- possibilities item 5 -->
                 <article class="possibilities-item">
-                  <div class="row row-cols-2">
+                  <div class="row row-cols-2 gx-4">
                     <div class="possibilities-item__info">
                       <h3 class="possibilities-item__title">
                         Corporate Gifting
@@ -2423,7 +2448,7 @@
                         experience with 1mn+ rewards options
                       </p>
                       <div class="possibilities-item__list">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-2 g-4">
                           <div class="col">
                             <h4 class="possibilities-item__heading">
                               Send bulk rewards
@@ -2485,7 +2510,7 @@
 
                 <!-- possibilities item 6 -->
                 <article class="possibilities-item">
-                  <div class="row row-cols-2">
+                  <div class="row row-cols-2 gx-4">
                     <div class="possibilities-item__info">
                       <h3 class="possibilities-item__title">ABM Rewards</h3>
                       <p class="possibilities-item__desc">
@@ -2495,7 +2520,7 @@
                         a bird's-eye view of your budget and expenses.
                       </p>
                       <div class="possibilities-item__list">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-2 g-4">
                           <div class="col">
                             <h4 class="possibilities-item__heading">
                               Personalize Campaigns
@@ -2557,7 +2582,7 @@
 
                 <!-- possibilities item 7 -->
                 <article class="possibilities-item">
-                  <div class="row row-cols-2">
+                  <div class="row row-cols-2 gx-4">
                     <div class="possibilities-item__info">
                       <h3 class="possibilities-item__title">
                         Gaming & Casino Rewards
@@ -2569,7 +2594,7 @@
                         delivery and redemption status in real-time
                       </p>
                       <div class="possibilities-item__list">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-2 g-4">
                           <div class="col">
                             <h4 class="possibilities-item__heading">
                               Flexible Denominations

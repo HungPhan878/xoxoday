@@ -860,7 +860,7 @@ strong {
 }
 @media screen and (max-width: 991.98px) {
   .container {
-    max-width: 720px;
+    max-width: 880px;
   }
   .row-cols-lg-1 > * {
     flex: 0 0 auto;
@@ -1555,6 +1555,24 @@ strong {
 .header__dropdown-link:hover .header__dropdown-link__text, .header__dropdown-link:hover .header__dropdown-link__desc--solution, .header__dropdown-link:hover .header__dropdown-link__desc-resource {
   color: var(--primary-color);
 }
+.header-mobile__wrap {
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.header-mobile__logo {
+  width: 125px;
+  height: 42px;
+  object-fit: cover;
+}
+.header-mobile__menu-icon {
+  width: 32px;
+  height: 26px;
+  object-fit: cover;
+  cursor: pointer;
+}
 
 .font-size-16px, .secure-text, .possibilities-item__desc, .solution-info__desc, .tools-info__desc, .features-item__desc {
   color: #394960;
@@ -1645,6 +1663,13 @@ strong {
   justify-content: space-between;
   margin-top: 32px;
 }
+@media screen and (max-width: 991.98px) {
+  .reward-brands {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 52px;
+  }
+}
 .reward-brand__img:last-child {
   width: 117px;
   height: 30px;
@@ -1655,6 +1680,11 @@ strong {
   padding: 80px 0;
   background-color: #f6f7f9;
 }
+@media screen and (max-width: 991.98px) {
+  .distribute-row--lg {
+    align-items: end;
+  }
+}
 .distribute-heading {
   font-size: 3.4rem;
   font-weight: 600;
@@ -1663,6 +1693,19 @@ strong {
 }
 .distribute-features {
   margin-top: 40px;
+}
+@media screen and (max-width: 991.98px) {
+  .distribute-features {
+    height: 709px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .distribute-list {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    overflow: auto;
+  }
 }
 .distribute-item {
   display: flex;
@@ -1680,6 +1723,11 @@ strong {
 .distribute-item:first-child {
   margin-top: 0;
 }
+@media screen and (max-width: 991.98px) {
+  .distribute-item:first-child {
+    margin-top: 15px;
+  }
+}
 .distribute-item:hover, .distribute-item.active {
   box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.0588235294);
 }
@@ -1691,6 +1739,13 @@ strong {
 }
 .distribute-item:hover .distribute-item__icon-switch, .distribute-item.active .distribute-item__icon-switch {
   background-image: url("../images/arrow-icon-right-black-2.svg");
+}
+@media screen and (max-width: 991.98px) {
+  .distribute-item {
+    flex-shrink: 0;
+    gap: 12px;
+    background-color: transparent;
+  }
 }
 .distribute-item__icon-inner {
   display: flex;
@@ -1737,13 +1792,18 @@ strong {
   opacity: 1;
   transition: visibility 0.5s ease, opacity 1s ease;
 }
+@media screen and (max-width: 991.98px) {
+  .distribute-content__wrap {
+    background-color: transparent;
+  }
+}
 .distribute-content__title {
   font-size: 20px;
   font-weight: 600;
 }
 .distribute-content__desc {
   margin-top: 20px;
-  width: 352px;
+  max-width: 352px;
   font-weight: 400;
   line-height: 1.7;
   color: #394960;
@@ -1798,6 +1858,11 @@ strong {
   width: inherit;
   height: inherit;
   object-fit: cover;
+}
+@media screen and (max-width: 991.98px) {
+  .distribute-content__img {
+    object-fit: contain;
+  }
 }
 
 .explore {
@@ -2045,6 +2110,7 @@ strong {
 .solution {
   padding: 80px 0;
   background-color: #fff;
+  height: 770px;
 }
 .solution-info {
   display: flex;
@@ -2102,6 +2168,9 @@ strong {
 .solution-item.active .solution-item__icon {
   rotate: 180deg;
 }
+.solution-item:hover .solution-item__link-icon {
+  background-image: url("../images/arrow-icon-right-primary-2.svg");
+}
 .solution-item__inner {
   display: flex;
   align-items: center;
@@ -2130,9 +2199,6 @@ strong {
   display: flex;
   align-items: center;
 }
-.solution-item__link:hover .solution-item__link-icon {
-  background-image: url("../images/arrow-icon-right-primary-2.svg");
-}
 .solution-item__link-text {
   border-bottom: 1px solid var(--primary-color);
   line-height: 1.5;
@@ -2155,6 +2221,7 @@ strong {
 }
 
 .possibilities {
+  margin-top: 60px;
   padding-top: 110px;
 }
 .possibilities-info {
@@ -2240,9 +2307,14 @@ strong {
   background-repeat: no-repeat;
   margin-right: 10px;
 }
+.possibilities-item__image {
+  display: flex;
+  justify-content: end;
+}
 .possibilities-item__img {
-  width: 100%;
+  width: 90%;
   object-fit: contain;
+  margin-left: auto;
 }
 
 .feedback {

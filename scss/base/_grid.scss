@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // breakpoint
 // responsive theo desktop first
@@ -14,7 +14,7 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 100%,
   md: 540px,
-  lg: 720px,
+  lg: 880px,
   xl: 960px,
   xxl: 1270px,
 );
@@ -139,7 +139,7 @@ $grid-spacer-width: 30px !default;
 // each
 @each $break-point, $dimension in $grid-breakpoints {
   $max-width: map-get($container-max-widths, $break-point);
-  $infix: "-#{$break-point}";
+  $infix: '-#{$break-point}';
 
   @include make-media-query($dimension) {
     .container {

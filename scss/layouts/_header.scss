@@ -1,3 +1,5 @@
+@use '../abstracts';
+
 //common
 .mt-16 {
   margin-top: 16px !important;
@@ -262,5 +264,28 @@
   &__dropdown-link:hover &__dropdown-link__desc--solution,
   &__dropdown-link:hover &__dropdown-link__desc-resource {
     color: var(--primary-color);
+  }
+  // mobile
+  &-mobile__wrap {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  &-mobile__logo-link {
+  }
+
+  &-mobile__logo {
+    width: 125px;
+    height: 42px;
+    object-fit: cover;
+  }
+
+  &-mobile__menu-icon {
+    width: 32px;
+    height: 26px;
+    object-fit: cover;
+    cursor: pointer;
   }
 }
