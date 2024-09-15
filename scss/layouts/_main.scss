@@ -28,6 +28,10 @@
     font-size: 4.8rem;
     font-weight: 600;
     line-height: 6.2rem;
+
+    @include abstracts.breakpoint(lg) {
+      width: 655px;
+    }
   }
 
   &-info__desc {
@@ -35,6 +39,10 @@
     font-size: 2rem;
     line-height: 3rem;
     font-weight: 400;
+
+    @include abstracts.breakpoint(lg) {
+      width: 728px;
+    }
   }
 
   &-info__btns {
@@ -127,6 +135,10 @@
 
   background-color: #f6f7f9;
 
+  @include abstracts.breakpoint(lg) {
+    padding: 72px 0;
+  }
+
   &-row--lg {
     @include abstracts.breakpoint(lg) {
       align-items: end;
@@ -138,6 +150,10 @@
     font-weight: 600;
     line-height: 44px;
     text-align: center;
+
+    @include abstracts.breakpoint(lg) {
+      width: 684px;
+    }
   }
 
   &-features {
@@ -353,6 +369,10 @@
 .explore {
   padding: 80px 0;
 
+  @include abstracts.breakpoint(lg) {
+    padding: 42px 0;
+  }
+
   &-info {
     display: flex;
     align-items: center;
@@ -434,10 +454,20 @@
     margin-top: 60px;
   }
 
+  &-list__row--lg {
+    @include abstracts.breakpoint(lg) {
+      flex-direction: column-reverse;
+    }
+  }
+
   &-images {
     position: relative;
     width: 100%;
     // padding-top: 70%;
+
+    @include abstracts.breakpoint(lg) {
+      height: 650px;
+    }
   }
 
   &-img {
@@ -455,6 +485,17 @@
       visibility: visible;
       transition: opacity 2s ease, visibility 2s ease;
     }
+
+    @include abstracts.breakpoint(lg) {
+      width: 90%;
+    }
+  }
+
+  &-list__features {
+    @include abstracts.breakpoint(lg) {
+      padding-bottom: 3.5px;
+      border-bottom: 1px solid #afbccf80;
+    }
   }
 
   &-item {
@@ -471,6 +512,10 @@
       width: 90%;
       height: 1px;
       background-color: #508dff;
+
+      @include abstracts.breakpoint(lg) {
+        background-color: transparent;
+      }
     }
 
     &:hover &__title,
@@ -520,6 +565,17 @@
   background-color: #f6f7f9;
   padding: 80px 0;
 
+  @include abstracts.breakpoint(lg) {
+    padding: 42px 0;
+  }
+
+  &-row--lg {
+    @include abstracts.breakpoint(lg) {
+      max-width: 760px;
+      margin: auto;
+    }
+  }
+
   &-info {
     display: flex;
     align-items: center;
@@ -534,6 +590,10 @@
     font-size: 34px;
     font-weight: 600;
     line-height: 4.4rem;
+
+    @include abstracts.breakpoint(lg) {
+      width: 728px;
+    }
   }
 
   &-info__desc {
@@ -557,6 +617,10 @@
 
     background-color: #fff;
     text-align: left;
+
+    @include abstracts.breakpoint(lg) {
+      height: 276px;
+    }
   }
 
   &-item__title {
@@ -602,6 +666,10 @@
   background-color: #e6eeff;
   padding: 80px 0;
 
+  @include abstracts.breakpoint(lg) {
+    padding: 42px 0;
+  }
+
   &-info {
     display: flex;
     align-items: center;
@@ -615,12 +683,20 @@
     font-size: 34px;
     font-weight: 600;
     line-height: 4.4rem;
+
+    @include abstracts.breakpoint(lg) {
+      width: 728px;
+    }
   }
 
   &-info__desc {
     @extend .font-size-16px;
 
     max-width: 672px;
+
+    @include abstracts.breakpoint(lg) {
+      max-width: 538px;
+    }
   }
 
   &-cta {
@@ -642,11 +718,19 @@
 
   &-image {
     margin-top: 60px;
+
+    @include abstracts.breakpoint(lg) {
+      text-align: center;
+    }
   }
 
   &-img {
     width: 100%;
     object-fit: cover;
+
+    @include abstracts.breakpoint(lg) {
+      width: 86%;
+    }
   }
 }
 
@@ -656,6 +740,10 @@
   padding: 80px 0;
   background-color: #fff;
   height: 770px;
+
+  @include abstracts.breakpoint(lg) {
+    padding: 64px 0;
+  }
 
   &-info {
     display: flex;
@@ -708,6 +796,7 @@
     padding: 20px 0;
     border-bottom: 1.5px solid #cfd7e2;
     cursor: pointer;
+
     &.active {
       border-bottom-color: transparent;
     }
@@ -720,6 +809,10 @@
       padding: 16px 0 20px 0;
       transform: scale(1);
       max-height: 500px;
+
+      @include abstracts.breakpoint(lg) {
+        padding-bottom: 0;
+      }
     }
 
     &.active .solution-item__icon {

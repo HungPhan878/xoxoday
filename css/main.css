@@ -1599,11 +1599,21 @@ strong {
   font-weight: 600;
   line-height: 6.2rem;
 }
+@media screen and (max-width: 991.98px) {
+  .reward-info__heading {
+    width: 655px;
+  }
+}
 .reward-info__desc {
   width: 864px;
   font-size: 2rem;
   line-height: 3rem;
   font-weight: 400;
+}
+@media screen and (max-width: 991.98px) {
+  .reward-info__desc {
+    width: 728px;
+  }
 }
 .reward-info__btns {
   display: flex;
@@ -1681,6 +1691,11 @@ strong {
   background-color: #f6f7f9;
 }
 @media screen and (max-width: 991.98px) {
+  .distribute {
+    padding: 72px 0;
+  }
+}
+@media screen and (max-width: 991.98px) {
   .distribute-row--lg {
     align-items: end;
   }
@@ -1690,6 +1705,11 @@ strong {
   font-weight: 600;
   line-height: 44px;
   text-align: center;
+}
+@media screen and (max-width: 991.98px) {
+  .distribute-heading {
+    width: 684px;
+  }
 }
 .distribute-features {
   margin-top: 40px;
@@ -1868,6 +1888,11 @@ strong {
 .explore {
   padding: 80px 0;
 }
+@media screen and (max-width: 991.98px) {
+  .explore {
+    padding: 42px 0;
+  }
+}
 .explore-info {
   display: flex;
   align-items: center;
@@ -1934,9 +1959,19 @@ strong {
 .explore-list {
   margin-top: 60px;
 }
+@media screen and (max-width: 991.98px) {
+  .explore-list__row--lg {
+    flex-direction: column-reverse;
+  }
+}
 .explore-images {
   position: relative;
   width: 100%;
+}
+@media screen and (max-width: 991.98px) {
+  .explore-images {
+    height: 650px;
+  }
 }
 .explore-img {
   position: absolute;
@@ -1952,6 +1987,17 @@ strong {
   visibility: visible;
   transition: opacity 2s ease, visibility 2s ease;
 }
+@media screen and (max-width: 991.98px) {
+  .explore-img {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .explore-list__features {
+    padding-bottom: 3.5px;
+    border-bottom: 1px solid rgba(175, 188, 207, 0.5019607843);
+  }
+}
 .explore-item {
   position: relative;
   padding: 15.5px 15px;
@@ -1965,6 +2011,11 @@ strong {
   width: 90%;
   height: 1px;
   background-color: #508dff;
+}
+@media screen and (max-width: 991.98px) {
+  .explore-item::before {
+    background-color: transparent;
+  }
 }
 .explore-item:hover .explore-item__title, .explore-item.active .explore-item__title {
   color: var(--primary-color);
@@ -2004,6 +2055,17 @@ strong {
   background-color: #f6f7f9;
   padding: 80px 0;
 }
+@media screen and (max-width: 991.98px) {
+  .features {
+    padding: 42px 0;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .features-row--lg {
+    max-width: 760px;
+    margin: auto;
+  }
+}
 .features-info {
   display: flex;
   align-items: center;
@@ -2016,6 +2078,11 @@ strong {
   font-size: 34px;
   font-weight: 600;
   line-height: 4.4rem;
+}
+@media screen and (max-width: 991.98px) {
+  .features-info__heading {
+    width: 728px;
+  }
 }
 .features-info__desc {
   max-width: 746px;
@@ -2034,6 +2101,11 @@ strong {
   height: 262px;
   background-color: #fff;
   text-align: left;
+}
+@media screen and (max-width: 991.98px) {
+  .features-item {
+    height: 276px;
+  }
 }
 .features-item__title {
   margin-top: 20px;
@@ -2070,6 +2142,11 @@ strong {
   background-color: #e6eeff;
   padding: 80px 0;
 }
+@media screen and (max-width: 991.98px) {
+  .tools {
+    padding: 42px 0;
+  }
+}
 .tools-info {
   display: flex;
   align-items: center;
@@ -2082,8 +2159,18 @@ strong {
   font-weight: 600;
   line-height: 4.4rem;
 }
+@media screen and (max-width: 991.98px) {
+  .tools-info__heading {
+    width: 728px;
+  }
+}
 .tools-info__desc {
   max-width: 672px;
+}
+@media screen and (max-width: 991.98px) {
+  .tools-info__desc {
+    max-width: 538px;
+  }
 }
 .tools-cta {
   display: flex;
@@ -2102,15 +2189,30 @@ strong {
 .tools-image {
   margin-top: 60px;
 }
+@media screen and (max-width: 991.98px) {
+  .tools-image {
+    text-align: center;
+  }
+}
 .tools-img {
   width: 100%;
   object-fit: cover;
+}
+@media screen and (max-width: 991.98px) {
+  .tools-img {
+    width: 86%;
+  }
 }
 
 .solution {
   padding: 80px 0;
   background-color: #fff;
   height: 770px;
+}
+@media screen and (max-width: 991.98px) {
+  .solution {
+    padding: 64px 0;
+  }
 }
 .solution-info {
   display: flex;
@@ -2164,6 +2266,11 @@ strong {
   padding: 16px 0 20px 0;
   transform: scale(1);
   max-height: 500px;
+}
+@media screen and (max-width: 991.98px) {
+  .solution-item.active .solution-item__info {
+    padding-bottom: 0;
+  }
 }
 .solution-item.active .solution-item__icon {
   rotate: 180deg;

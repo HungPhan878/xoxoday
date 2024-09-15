@@ -1611,8 +1611,8 @@
             </div>
 
             <div class="explore-list">
-              <div class="row gx-5">
-                <div class="col col-6">
+              <div class="row gx-5 explore-list__row--lg">
+                <div class="col col-6 col-lg-12">
                   <figure class="explore-images">
                     <img
                       src="../images/explore/explore1.webp"
@@ -1667,9 +1667,11 @@
                   </figure>
                 </div>
 
-                <div class="col-6">
+                <div class="col col-6 col-lg-12">
                   <div class="explore-list__features">
-                    <div class="row row-cols-2 gx-3 gy-3 js-toggle-list">
+                    <div
+                      class="row row-cols-2 row-cols-lg-3 gx-3 gy-3 js-toggle-list"
+                    >
                       <div class="explore-item active">
                         <div class="explore-item__row">
                           <h3 class="explore-item__title">Gift Cards</h3>
@@ -1798,7 +1800,9 @@
             </div>
 
             <div class="features-list">
-              <div class="row row-cols-3 gx-3 gy-3">
+              <div
+                class="row row-cols-3 row-cols-lg-2 gx-3 gx-lg-4 gy-3 features-row--lg"
+              >
                 <!-- features item 1 -->
                 <div class="col">
                   <div class="features-item">
@@ -1923,11 +1927,17 @@
             </div>
 
             <figure class="tools-image">
-              <img
-                src="../images/features/tool.avif"
-                alt="Xoxoday integrates with all the tools you use to run your business"
-                class="tools-img"
-              />
+              <picture>
+                <source
+                  media="(max-width: 992px)"
+                  srcset="../images/tools/tool_mobile.avif"
+                />
+                <img
+                  src="../images/tools/tool.avif"
+                  alt="Xoxoday integrates with all the tools you use to run your business"
+                  class="tools-img"
+                />
+              </picture>
             </figure>
           </div>
         </div>
@@ -1956,7 +1966,7 @@
             </div>
 
             <div class="solution-list__wrap">
-              <div class="row row-cols-2 gx-4">
+              <div class="row row-cols-2 gx-4 gx-lg-2">
                 <div class="col">
                   <figure class="solution-images">
                     <img
