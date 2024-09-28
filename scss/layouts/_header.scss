@@ -24,6 +24,10 @@
     padding: 10px 48px;
 
     background-color: #021b33;
+
+    @include abstracts.breakpoint(md) {
+      height: 74px;
+    }
   }
   &-info {
     display: flex;
@@ -33,6 +37,10 @@
 
     font-size: 1.4rem;
     color: #fff;
+
+    @include abstracts.breakpoint(md) {
+      flex-direction: column;
+    }
   }
   &-desc {
     font-weight: 300;
