@@ -2187,10 +2187,12 @@ strong {
 }
 .features-btns {
   margin-top: 30px;
-  padding: 22.5px;
+  padding: 0 22.5px;
   display: flex;
+  align-items: center;
 }
 .features-btn__switch {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2204,8 +2206,22 @@ strong {
 .features-btn__switch:hover {
   border-color: var(--primary-color);
 }
-.features-btn__switch:last-child {
-  margin-left: 20px;
+.features-btn__switch:first-child {
+  margin-right: 20px;
+}
+.features-btn__switch-lines {
+  width: 100%;
+  display: flex;
+}
+.features-btn__switch-line {
+  height: 2px;
+  width: 16.6%;
+  background-color: #eff2f5;
+  transition: background-color 0.7s ease;
+  cursor: pointer;
+}
+.features-btn__switch-line.active {
+  background-color: #246ef6;
 }
 .features-btn__switch-icon {
   width: 15px;
@@ -2356,7 +2372,7 @@ strong {
 }
 @media screen and (max-width: 767.98px) {
   .solution {
-    height: 1100px;
+    height: 1150px;
   }
 }
 .solution-info {
@@ -2495,6 +2511,7 @@ strong {
   font-size: 34px;
   font-weight: 600;
   line-height: 44px;
+  text-align: center;
 }
 .possibilities-content {
   margin-top: 56px;
@@ -2606,21 +2623,11 @@ strong {
 }
 
 .feedback {
-  padding: 80px;
+  padding: 80px 0;
 }
 @media screen and (max-width: 767.98px) {
   .feedback {
     padding: 42px 30px;
-  }
-}
-@media screen and (max-width: 991.98px) {
-  .feedback-container {
-    max-width: 760px;
-  }
-}
-@media screen and (max-width: 767.98px) {
-  .feedback-container {
-    max-width: 100%;
   }
 }
 .feedback-wrap {
@@ -2659,8 +2666,15 @@ strong {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1019607843);
   overflow: hidden;
 }
+@media screen and (max-width: 1199.98px) {
+  .feedback-quote {
+    height: 272px;
+  }
+}
 @media screen and (max-width: 991.98px) {
   .feedback-quote {
+    margin: 0 20px;
+    height: auto;
     max-width: 686px;
     flex-direction: column;
   }
@@ -2674,6 +2688,11 @@ strong {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media screen and (max-width: 1199.98px) {
+  .feedback-img {
+    height: 274px;
+  }
 }
 @media screen and (max-width: 991.98px) {
   .feedback-img {
@@ -2873,6 +2892,11 @@ strong {
   line-height: 44px;
   letter-spacing: 0.5px;
 }
+@media screen and (max-width: 767.98px) {
+  .secure-heading {
+    text-align: center;
+  }
+}
 .secure-label {
   font-size: 2rem;
   color: #041a2f;
@@ -2881,6 +2905,11 @@ strong {
 }
 .secure-list {
   margin-top: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .secure-list {
+    height: 480px;
+  }
 }
 .secure-item {
   margin-bottom: 32px;

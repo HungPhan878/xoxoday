@@ -678,11 +678,13 @@
 
   &-btns {
     margin-top: 30px;
-    padding: 22.5px;
+    padding: 0 22.5px;
     display: flex;
+    align-items: center;
   }
 
   &-btn__switch {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -699,8 +701,27 @@
       border-color: var(--primary-color);
     }
 
-    &:last-child {
-      margin-left: 20px;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &-btn__switch-lines {
+    width: 100%;
+    display: flex;
+  }
+
+  &-btn__switch-line {
+    height: 2px;
+    width: 16.6%;
+
+    background-color: #eff2f5;
+
+    transition: background-color 0.7s ease;
+    cursor: pointer;
+
+    &.active {
+      background-color: #246ef6;
     }
   }
 
@@ -872,7 +893,7 @@
   }
 
   @include abstracts.breakpoint(md) {
-    height: 1100px;
+    height: 1150px;
   }
 
   &-info {
@@ -1045,6 +1066,7 @@
     font-size: 34px;
     font-weight: 600;
     line-height: 44px;
+    text-align: center;
   }
 
   &-content {
@@ -1179,20 +1201,10 @@
 
 //feedback
 .feedback {
-  padding: 80px;
+  padding: 80px 0;
 
   @include abstracts.breakpoint(md) {
     padding: 42px 30px;
-  }
-
-  &-container {
-    @include abstracts.breakpoint(lg) {
-      max-width: 760px;
-    }
-
-    @include abstracts.breakpoint(md) {
-      max-width: 100%;
-    }
   }
 
   &-wrap {
@@ -1235,7 +1247,13 @@
     box-shadow: 0 10px 20px #0000001a;
     overflow: hidden;
 
+    @include abstracts.breakpoint(xl) {
+      height: 272px;
+    }
+
     @include abstracts.breakpoint(lg) {
+      margin: 0 20px;
+      height: auto;
       max-width: 686px;
       flex-direction: column;
     }
@@ -1251,8 +1269,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    @include abstracts.breakpoint(xl) {
+      height: 274px;
+    }
+
     @include abstracts.breakpoint(lg) {
       width: 100%;
+      // height: 100%;
     }
 
     &::before {
@@ -1476,6 +1499,10 @@
     font-weight: 600;
     line-height: 44px;
     letter-spacing: 0.5px;
+
+    @include abstracts.breakpoint(md) {
+      text-align: center;
+    }
   }
 
   &-label {
@@ -1487,6 +1514,10 @@
 
   &-list {
     margin-top: 40px;
+
+    @include abstracts.breakpoint(md) {
+      height: 480px;
+    }
   }
 
   &-item {

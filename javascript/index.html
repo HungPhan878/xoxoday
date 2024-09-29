@@ -1812,20 +1812,34 @@
             </div>
             <div class="features-inner">
               <!-- btn switch -->
-              <div class="features-btns">
-                <div class="features-btn__switch">
+              <div class="features-btns d-none d-md-flex">
+                <div
+                  id="features-btn__switch-prev"
+                  class="features-btn__switch"
+                >
                   <img
                     src="../images/arrow-icon-right-black.svg"
                     alt="icon"
                     class="features-btn__switch-icon features-btn__switch-icon--right"
                   />
                 </div>
-                <div class="features-btn__switch">
+                <div
+                  id="features-btn__switch-next"
+                  class="features-btn__switch"
+                >
                   <img
                     src="../images/arrow-icon-right-black.svg"
                     alt="icon"
                     class="features-btn__switch-icon features-btn__switch-icon--left"
                   />
+                </div>
+                <div class="features-btn__switch-lines">
+                  <div class="features-btn__switch-line active"></div>
+                  <div class="features-btn__switch-line"></div>
+                  <div class="features-btn__switch-line"></div>
+                  <div class="features-btn__switch-line"></div>
+                  <div class="features-btn__switch-line"></div>
+                  <div class="features-btn__switch-line"></div>
                 </div>
               </div>
 
@@ -2770,7 +2784,7 @@
 
       <!-- feedback -->
       <section class="feedback">
-        <div class="container feedback-container">
+        <div class="container">
           <div class="feedback-wrap">
             <h2 class="feedback-heading">
               5000+ customers globally use Xoxoday to fuel growth
@@ -2913,7 +2927,7 @@
       >
         <div class="container secure-container">
           <div class="secure-wrap">
-            <div class="row row-cols-2 gx-1">
+            <div class="row row-cols-2 row-cols-md-1 gx-1">
               <div class="col">
                 <div class="secure-info">
                   <h2 class="secure-heading">
@@ -2981,7 +2995,7 @@
                 </div>
               </div>
               <div class="col">
-                <figure class="secure-image">
+                <figure class="secure-image d-md-none">
                   <img
                     src="../images/secure/image.webp"
                     alt="Enterprise grade platform that is fully secure and designed to scale"
