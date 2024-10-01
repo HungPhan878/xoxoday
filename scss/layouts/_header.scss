@@ -28,6 +28,10 @@
     @include abstracts.breakpoint(md) {
       height: 74px;
     }
+
+    @include abstracts.breakpoint(sm) {
+      height: 100px;
+    }
   }
   &-info {
     display: flex;
@@ -44,6 +48,9 @@
   }
   &-desc {
     font-weight: 300;
+    @include abstracts.breakpoint(lg) {
+      line-height: 1.5;
+    }
   }
 
   &-link {

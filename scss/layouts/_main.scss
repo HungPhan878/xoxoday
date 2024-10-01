@@ -133,6 +133,11 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 52px;
     }
+
+    @include abstracts.breakpoint(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
   }
 
   &-brand__img:last-child {
@@ -505,6 +510,9 @@
     @include abstracts.breakpoint(lg) {
       flex-direction: column-reverse;
     }
+
+    @include abstracts.breakpoint(lg) {
+    }
   }
 
   &-images {
@@ -518,6 +526,10 @@
 
     @include abstracts.breakpoint(md) {
       height: 500px;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      height: 400px;
     }
   }
 
@@ -544,12 +556,24 @@
     @include abstracts.breakpoint(md) {
       width: 110%;
     }
+
+    @include abstracts.breakpoint(sm) {
+      width: 100%;
+    }
   }
 
   &-list__features {
     @include abstracts.breakpoint(lg) {
       padding-bottom: 3.5px;
       border-bottom: 1px solid #afbccf80;
+    }
+
+    &--sm {
+      @include abstracts.breakpoint(sm) {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
     }
   }
 
@@ -587,6 +611,10 @@
         width: 90%;
         height: 2px;
         background-color: #508dff;
+
+        @include abstracts.breakpoint(lg) {
+          bottom: 0;
+        }
       }
     }
     &.active &__icon {
@@ -735,9 +763,6 @@
     rotate: 180deg;
   }
 
-  &-btn__switch-icon--left {
-  }
-
   &-list {
     margin-top: 40px;
 
@@ -755,6 +780,10 @@
 
     background-color: #fff;
     text-align: left;
+
+    @include abstracts.breakpoint(xl) {
+      height: 290px;
+    }
 
     @include abstracts.breakpoint(lg) {
       height: 276px;
@@ -1518,6 +1547,10 @@
     @include abstracts.breakpoint(md) {
       height: 480px;
     }
+
+    @include abstracts.breakpoint(sm) {
+      height: 520px;
+    }
   }
 
   &-item {
@@ -1525,9 +1558,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-  }
-
-  &-icon {
   }
 
   &-text {
