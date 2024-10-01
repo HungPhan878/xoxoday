@@ -17,6 +17,12 @@
   margin-top: 48px !important;
 }
 
+@include abstracts.breakpoint(sm) {
+  .mt-15 {
+    margin-top: 15px !important;
+  }
+}
+
 .gift {
   &-wrap {
     position: relative;
@@ -116,6 +122,12 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
+
+    @include abstracts.breakpoint(lg) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
   }
 
   &__menu-item {
@@ -133,6 +145,10 @@
       color: var(--primary-color);
     }
 
+    &:hover .header__link-text {
+      color: var(--primary-color);
+    }
+
     &:hover .header__menu-item__arrow {
       filter: brightness(0) saturate(100%) invert(24%) sepia(99%)
         saturate(4377%) hue-rotate(217deg) brightness(101%) contrast(105%);
@@ -147,6 +163,10 @@
 
     /* Chuyển tất cả các thuộc tính vào đây để hiệu ứng hoạt động cả khi hover vào và ra */
     transition: filter 0.5s ease, transform 1s ease;
+
+    @include abstracts.breakpoint(lg) {
+      margin-left: auto;
+    }
   }
 
   &__menu-item__text {
@@ -156,17 +176,43 @@
     padding: 15px 0;
 
     color: inherit;
+
     filter: brightness(1) saturate(100%);
     transform: rotate(0deg);
-
     /* Chuyển tất cả các thuộc tính vào đây để hiệu ứng hoạt động cả khi hover vào và ra */
     transition: color 0.5s ease;
+
+    @include abstracts.breakpoint(lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+      border-left: 5px solid var(--primary-color);
+    }
+  }
+
+  &__link-text {
+    display: inline-block;
+    padding: 15px 0;
+    color: inherit;
+    @include abstracts.breakpoint(lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &-button__wrap {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include abstracts.breakpoint(lg) {
+      margin-top: 32px;
+      justify-content: center;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      flex-direction: column;
+      gap: 15px;
+    }
   }
 
   &__btn-link {
@@ -217,11 +263,22 @@
 
     color: #26262d;
     background-color: #fff;
+
+    @include abstracts.breakpoint(lg) {
+      position: relative;
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
   }
 
   &__dropdown-solution {
     width: 800px;
     left: -180px;
+    @include abstracts.breakpoint(lg) {
+      width: 100%;
+      left: 0;
+    }
   }
 
   &__dropdown-resource {
@@ -236,6 +293,16 @@
 
     &:first-child {
       margin-top: 0;
+    }
+
+    @include abstracts.breakpoint(lg) {
+      padding: 0 25px;
+    }
+  }
+
+  &__dropdown-title {
+    @include abstracts.breakpoint(lg) {
+      font-size: 1.4rem;
     }
   }
 
@@ -288,8 +355,6 @@
     justify-content: space-between;
     padding: 0 20px;
   }
-  &-mobile__logo-link {
-  }
 
   &-mobile__logo {
     width: 125px;
@@ -297,10 +362,44 @@
     object-fit: cover;
   }
 
+  &-mobile__menu {
+    cursor: pointer;
+    &.active {
+      background-color: #f7f8fa;
+      border-radius: 4px;
+      padding: 10px;
+    }
+  }
+
   &-mobile__menu-icon {
     width: 32px;
     height: 26px;
     object-fit: cover;
     cursor: pointer;
+  }
+}
+
+// mobile
+.mobile {
+  &-wrap {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #fff;
+
+    overflow-y: scroll; /* Cho phép cuộn */
+    scrollbar-width: none; /* Ẩn thanh cuộn trong Firefox */
+    transition-property: height, opacity, visibility;
+    transition: 0.5s ease;
+
+    &::-webkit-scrollbar {
+      display: none; /* Ẩn thanh cuộn trong Chrome, Safari và Edge */
+    }
+
+    &.active {
+      height: 100vh;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

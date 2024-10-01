@@ -1,6 +1,21 @@
 function main() {
   $(document).ready(function () {
     // custom function
+    function cloneElement(originalElement, targetElement) {
+      var clonedElement = $(originalElement).clone();
+      $(targetElement).append(clonedElement);
+    }
+
+    function toggleActive(buttonSelector, targetSelector) {
+      $(buttonSelector).on('click', function () {
+        // Thêm hoặc xóa 'active' cho phần tử đích
+        $(targetSelector).toggleClass('active');
+
+        // Thêm hoặc xóa 'active' cho chính nút đã nhấn
+        $(this).toggleClass('active');
+      });
+    }
+
     function handleActiveToggle(
       selector,
       itemSelector,
@@ -249,6 +264,13 @@ function main() {
         }
       }
     );
+
+    // toggle class
+    toggleActive('.header-mobile__menu', '.mobile-wrap');
+
+    // clone element
+    cloneElement('#nav-menu', '#mobile');
+    cloneElement('#btns-element', '#mobile');
   });
 }
 
