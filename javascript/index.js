@@ -69,7 +69,6 @@ function main() {
       timeout,
       callback = null
     ) {
-      console.log('auto active');
       let currentIndex = index;
       let items = $(selector).find(itemSelector);
       // let startTime;
@@ -77,7 +76,6 @@ function main() {
       let autoChangeInterval;
 
       function autoChangeActive() {
-        console.log('auto change active');
         items.removeClass(activeClass);
         items.eq(currentIndex).addClass(activeClass);
 
@@ -271,6 +269,31 @@ function main() {
     // clone element
     cloneElement('#nav-menu', '#mobile');
     cloneElement('#btns-element', '#mobile');
+    // next
+    let index = 0;
+    let newWidth = 0;
+    $('#features-btn__switch-next').click(function () {
+      let items = $('.features-item').length;
+      if (index < items - 1) {
+        index++;
+      } else {
+        index = 0;
+      }
+      newWidth = index * -100;
+      $('.features-list').css('--width', newWidth + '%');
+    });
+    // prev
+    $('#features-btn__switch-prev').click(function () {
+      let items = $('.features-item').length;
+
+      if (index > 0) {
+        index--;
+      } else {
+        index = items - 1;
+      }
+      newWidth = index * -100;
+      $('.features-list').css('--width', newWidth + '%');
+    });
   });
 }
 

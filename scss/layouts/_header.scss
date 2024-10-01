@@ -126,7 +126,7 @@
     @include abstracts.breakpoint(lg) {
       flex-direction: column;
       align-items: stretch;
-      gap: 10px;
+      gap: 0;
     }
   }
 
@@ -183,9 +183,17 @@
     transition: color 0.5s ease;
 
     @include abstracts.breakpoint(lg) {
-      padding-left: 20px;
-      padding-right: 20px;
-      border-left: 5px solid var(--primary-color);
+      position: relative;
+      padding: 20px;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10%;
+        bottom: 10%;
+        width: 5px;
+        background-color: var(--primary-color);
+      }
     }
   }
 
@@ -194,8 +202,7 @@
     padding: 15px 0;
     color: inherit;
     @include abstracts.breakpoint(lg) {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 20px;
     }
   }
 
